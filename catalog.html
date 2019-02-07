@@ -4,7 +4,8 @@
 	<meta charset="utf-8">
 	<title></title>
 </head>
-<body>
+<body class="inner-page">
+	
    <header class="main-header">
    	 <nav class="main-navigation">
    	 	<a class="main-header-logo" href="index.html">
@@ -18,21 +19,72 @@
    	 	  <li><a href="contacts.html">Контакты</a></li>
    	 	</ul>
    	 	<ul class="user-navigation">
-   	 		<li class="login-link">Вход</li>
+   	 		<li class="login-link" href="login.html">Вход</li>
    	 </nav>
-   </header>
-   <main class="container">
+	 </header>
+	 
+<main class="container">
+
    	<h1 class="page-title">Средства для ухода</h1>
 
    	<ul class="breadcrumbs">
    		<li><a href="index.html">Главная</a></li>
    		<li><a href="catalog.html">Магазин</a></li>
    		<li class="breadcrumbs-current">Средства для ухода</li>
-   	</ul>
-   	<section class="filters">
-   		<h2 class="visually-hidden">Фильтр товара</h2>
-   		<!--Здесь будет форма-->
-   	</section>
+		 </ul>
+		 
+		<section class="filters">
+			<h2 class="visually-hidden">Фильтр товаров</h2>
+			<form class="filter" method="get" action="https://echo.htmlacademy.ru">
+				<fieldset>
+					<legend>Производители:</legend>
+					<ul>
+						<li class="filter-option">
+							<input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="baxter-of-california" id="filter-baxter-of-california" checked>
+							<label for="filter-baxter-of-california">Baxter of California</label>
+						</li>
+						<li class="filter-option">
+							<input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="mr-natty" id="filter-mr-natty">
+							<label for="filter-mr-natty">Mr Natty</label>
+						</li>
+						<li class="filter-option">
+							<input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="suavecito" id="filter-suavecito" checked>
+							<label for="filter-suavecito">Suavecito</label>
+						</li>
+						<li class="filter-option">
+							<input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="malin-goetz" id="filter-malin-goetz">
+							<label for="filter-malin-goetz">Malin+Goetz</label>
+						</li>
+						<li class="filter-option">
+							<input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="murrays" id="filter-murrays">
+							<label for="filter-murrays">Murray’s</label>
+						</li>
+						<li class="filter-option">
+							<input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="american-crew" id="filter-american-crew" checked>
+							<label for="filter-american-crew">American Crew</label>
+						</li>
+					</ul>
+				</fieldset>
+				<fieldset>
+					<legend>Группы товаров:</legend>
+					<ul>
+						<li class="filter-option">
+							<input class="visually-hidden filter-input filter-input-radio" type="radio" name="product-group" value="shaving" id="filter-shave">
+							<label for="filter-shave">Бритвенные принадлежности</label>
+						</li>
+						<li class="filter-option">
+							<input class="visually-hidden filter-input filter-input-radio" type="radio" name="product-group" value="hair-care" id="filter-care" checked>
+							<label for="filter-care">Средства для ухода</label>
+						</li>
+						<li class="filter-option">
+							<input class="visually-hidden filter-input filter-input-radio" type="radio" name="product-group" value="accessories" id="filter-accessories">
+							<label for="filter-accessories">Аксессуары</label>
+						</li>
+					</ul>
+				</fieldset>
+				<button type="submit" class="filter-button button">Показать</button>
+			</form>
+		</section>
 
    	<section class="catalog">
    		<h2 class="visually-hidden">Список средств для ухода</h2>
@@ -146,8 +198,8 @@
           <li class="pagination-item"><a href="#">3</a></li>
           <li class="pagination-item"><a href="#">4</a></li>
         </ul>
-   	</section>
-   </main>
+  	</section>
+</main>
    <footer class="main-footer">
       <p class="footer-contacts">
         Барбершоп «Бородинский»<br>
@@ -167,10 +219,28 @@
         <b>Разработано:</b> <a class="button" href="https://htmlacademy.ru">HTML Academy</a>
       </p>
     </footer>
-        <section class="modal modal-login">
+    <section class="modal modal-login">
       <h2>Личный кабинет</h2>
       <p>Введите свой логин и пароль.</p>
-      <!-- Здесь будет форма -->
+			<form class="login-form" action="https://echo.htmlacademy.ru" method="post">
+				<p>
+					<label class="visually-hidden" for="user-login">Логин</label>
+					<input class="login-icon-user" id="user-login" type="text" name="login" placeholder="Логин">
+				</p>
+				<p>
+					<label class="visually-hidden" for="user-password">Пароль</label>
+					<input class="login-icon-password" id="user-password" type="password" name="password" placeholder="Пароль">
+				</p>
+				<p class="login-password-info">
+					<label class="login-checkbox">
+						<input type="checkbox" name="remember" class="visually-hidden">
+						<span class="checkbox-indicator"></span>
+						Запомните меня
+					</label>
+					<a class="restore" href="#">Я забыл пароль!</a>
+				</p>
+				<button class="button" type="submit">Войти</button>
+			</form><!-- Здесь будет форма -->
       <span class="modal-close">x</span>
     </section>
 </body>
